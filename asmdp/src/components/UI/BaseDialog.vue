@@ -7,20 +7,13 @@
 </template>
 
 <script>
+import dialogMixins from "../../mixins/dialogMixins";
+
 export default {
   name: "BaseDialog",
-  props:{
-    show:{
-      type:Boolean,
-      default:false
-    }
-  },
-  methods:{
-    hideDialog(){
-      this.$emit('update:show', false)
-    }
-  }
+  mixins: [dialogMixins],
 }
+
 </script>
 
 <style scoped>
@@ -37,8 +30,8 @@ export default {
 
 .dialog-content{
   margin: auto;
-  background: white;
-  border-radius: 12px;
+  background: #3C3F41;;
+  border-radius: 6px;
   min-height: 50px;
   min-width: 300px;
   padding: 20px;

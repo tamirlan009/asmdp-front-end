@@ -42,9 +42,9 @@
                       <p class="card-text">Колличество найденных ям: 45</p>
                       <p class="card-text">Колличество сохраненных изображении: 778</p>
                       <button-primary>Отправить</button-primary>
-                      <a href="#" class="btn btn-warning ms-1">Посмотреть на карте</a>
+                      <button class="btn btn-warning ms-1">Посмотреть на карте</button>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6 d-flex flex-wrap align-items-center justify-content-center">
                       <img src="@/assets/logo.png" class="img-thumbnail" style="height: 20vh;" alt="...">
                     </div>
                   </div>
@@ -82,7 +82,19 @@ export default {
 
 .form-check-input:checked{
   background: #528BCC;
-
 }
+
+@media (min-width: 992px) {
+  .btn-warning{
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-warning{
+    margin-top: 5px;
+  }
+}
+
 
 </style>

@@ -5,32 +5,58 @@ import UploadFiles from "@/views/UploadFiles";
 import Map from "@/views/Map";
 import WatchVideo from "@/views/WatchVideo";
 import DateSend from "@/views/DateSend";
+import EditPage from "../views/EditPage";
+import store from "@/store";
+
+
+const authGuard = function (to, from, next){
+    if(store.state.auth.token===null) next({name:'Authenticate'});
+    else next()
+}
+
 
 const routes =[
     {
         path: '/',
-        component: Main
+        name: 'Main',
+        component: Main,
+        beforeEnter: authGuard
     },
     {
-        path: '/auth',
-        component: Authenticate
+        path: '/login',
+        name: 'Authenticate',
+        component: Authenticate,
     },
     {
         path: '/upload',
-        component: UploadFiles
+        name: 'Upload',
+        component: UploadFiles,
+        beforeEnter: authGuard
     },
     {
         path: '/map',
-        component: Map
+        name: 'Map',
+        component: Map,
+        beforeEnter: authGuard
     },
     {
         path: '/video/:id',
-        component: WatchVideo
+        name: 'WatchVideo',
+        component: WatchVideo,
+        beforeEnter: authGuard
     },
     {
         path: '/send/:id',
-        component: DateSend
+        name: 'DateSend',
+        component: DateSend,
+        beforeEnter: authGuard
     },
+    {
+        path: '/edit/:id',
+        name: 'EditPage',
+        component: EditPage,
+        beforeEnter: authGuard
+    }
 
 ]
 

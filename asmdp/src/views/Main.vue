@@ -12,7 +12,7 @@ export default {
   name: "Main",
   components:{
     MainCard,
-  }
+  },
 }
 </script>
 
@@ -20,3 +20,5 @@ export default {
 
 
 </style>
+
+

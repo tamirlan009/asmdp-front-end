@@ -9,7 +9,7 @@
             <div class="form-text text-white-50">Файл должен иметь расширение формата MOV, MP4 </div>
           </div>
           <div class="mb-3">
-            <label for="datetime" class="form-label">Пароль</label>
+            <label for="datetime" class="form-label">Дата и время выезда</label>
             <input type="datetime-local" class="form-control" id="datetime" step="1">
             <div class="form-text text-white-50">Пожалуйста, введите точное Московское время и дата выезда</div>
           </div>
@@ -39,5 +39,13 @@ export default {
 form{
   background: #3C3F41;
 }
+
+@media (max-width: 575.98px) {
+  .btn{
+    margin-top: 5px;
+  }
+}
+
+
 
 </style>
